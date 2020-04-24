@@ -1,0 +1,13 @@
+{
+    "/api/*": {
+        "target": "https://i3vahk4356.execute-api.us-east-1.amazonaws.com/Test",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}
+
+
+
+
+
+

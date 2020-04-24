@@ -10,6 +10,8 @@ import { LogInComponent } from './log-in/log-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { LiveTimeComponent } from './live-time/live-time.component';
 import { HistoryComponent } from './history/history.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { HistoryComponent } from './history/history.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
     MDBBootstrapModule.forRoot()
   ],
   providers: [],

@@ -6,7 +6,7 @@ import { LiveTimeComponent } from './live-time/live-time.component';
 
 
 const routes: Routes = [
-   { path: 'liveTime', component:  LiveTimeComponent}
+   { path: 'liveTime/:dispositivoId', component:  LiveTimeComponent}
 ];
 
 @NgModule({
