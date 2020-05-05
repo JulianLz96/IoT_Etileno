@@ -12,6 +12,9 @@ import { LiveTimeComponent } from './live-time/live-time.component';
 import { HistoryComponent } from './history/history.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
+import { AmplifyAngularModule, AmplifyService } from 'aws-amplify-angular';
+import { DispositivosComponent } from './dispositivos/dispositivos.component';
 
 @NgModule({
   declarations: [
@@ -20,16 +23,21 @@ import { HttpClientModule } from '@angular/common/http';
     LogInComponent,
     SignUpComponent,
     LiveTimeComponent,
-    HistoryComponent
+    HistoryComponent,
+    HomeComponent,
+    DispositivosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    AmplifyAngularModule,
     MDBBootstrapModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    AmplifyService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

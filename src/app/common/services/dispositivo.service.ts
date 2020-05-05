@@ -15,4 +15,14 @@ export class DispositivoService {
       const url = 'https://i3vahk4356.execute-api.us-east-1.amazonaws.com/Test/' + deviceID;
       return this.httpClient.get(url).toPromise();
   }
+
+  getDispositivos(email:string):Promise<any> {
+    const url = '';
+    return this.httpClient.get(url).toPromise();
+  }
+
+  getDispositivosMocked(email:string):Array<String> {
+    const devices:Array<String> = [ "12340", "12345"];
+    return devices;
+  }
 }
