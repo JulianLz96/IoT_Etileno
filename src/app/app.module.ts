@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
@@ -15,6 +15,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { AmplifyAngularModule, AmplifyService } from 'aws-amplify-angular';
 import { DispositivosComponent } from './dispositivos/dispositivos.component';
+import { LoggeadoDirective } from './common/directriz/loggeado.directive';
+import { ChartsModule, WavesModule } from 'angular-bootstrap-md';
+import { FooterComponent } from './footer/footer.component'
 
 @NgModule({
   declarations: [
@@ -25,7 +28,9 @@ import { DispositivosComponent } from './dispositivos/dispositivos.component';
     LiveTimeComponent,
     HistoryComponent,
     HomeComponent,
-    DispositivosComponent
+    DispositivosComponent,
+    LoggeadoDirective,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -33,8 +38,11 @@ import { DispositivosComponent } from './dispositivos/dispositivos.component';
     FormsModule,
     HttpClientModule,
     AmplifyAngularModule,
+    ChartsModule,
+    WavesModule,
     MDBBootstrapModule.forRoot()
   ],
+  schemas: [ NO_ERRORS_SCHEMA ],
   providers: [
     AmplifyService
   ],

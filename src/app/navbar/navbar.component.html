@@ -1,19 +1,25 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" routerLink="/liveTime">Live Time</a>
+    <a class="navbar-brand" routerLink="/home">Live Time Home</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+            <li id="logOut" class="nav-item active" appLoggeado>
                 <a class="nav-link" routerLink="/history">History <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item active">
+            <li id="logOut" class="nav-item active" appLoggeado>
+                <a class="nav-link" routerLink="/dispositivos">Dispositivos <span class="sr-only">(current)</span></a>
+            </li>
+            <li id="Log" class="nav-item active" appLoggeado>
                 <a class="nav-link" routerLink="/logIn">Log In <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item active">
+            <li id="Sign" class="nav-item active" appLoggeado>
                 <a class="nav-link" routerLink="/logIn">Sign Up <span class="sr-only">(current)</span></a>
+            </li>
+            <li id="logOut" class="nav-item active" appLoggeado>
+                <a class="nav-link" (click)="logOut()">Log Out <span class="sr-only">(current)</span></a>
             </li>
 
         </ul>

@@ -20,7 +20,8 @@ export class LogInComponent implements OnInit, AfterViewInit, AfterContentInit {
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe(params => {
       this.token = params['code'];
-      localStorage.setItem('token', this.token);
+      if(this.token != null)
+        localStorage.setItem('token', this.token);
       Auth.currentAuthenticatedUser().then(data => {
         localStorage.setItem('email', data.attributes.email); 
       });
