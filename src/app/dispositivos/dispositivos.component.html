@@ -5,5 +5,14 @@
         <ul>
             <li class="devices" *ngFor="let device of devicesID" [routerLink]="['/liveTime', device]"> {{ device }}</li>
         </ul>
+        <div class="separador">
+            <h4>Agregar nuevo dispositivo</h4>
+            <div class="separador">
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="DeviceID" aria-label="DeviceID" [(ngModel)]="deviceID" name="deviceID">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="addDevice()">ADD</button>
+                </form>
+            </div>
+        </div>
     </div>
 </div>

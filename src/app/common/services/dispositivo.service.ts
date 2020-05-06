@@ -17,12 +17,17 @@ export class DispositivoService {
   }
 
   getDispositivos(email:string):Promise<any> {
-    const url = '';
+    const url = `${environment.url_cuentas}/${email}`;
     return this.httpClient.get(url).toPromise();
   }
 
   getDispositivosMocked(email:string):Array<String> {
     const devices:Array<String> = [ "12340", "12345"];
     return devices;
+  }
+
+  addDevice(email:String, deviceID:String) {
+    const url = `${environment.url_cuentas}/${email}/${deviceID}`;
+    return this.httpClient.post(url, {}).toPromise();
   }
 }
