@@ -7,12 +7,14 @@ import { LogInComponent } from './log-in/log-in.component';
 import { HomeComponent } from './home/home.component';
 import { AuthGuardGuard } from './common/guards/auth-guard.guard';
 import { DispositivosComponent } from './dispositivos/dispositivos.component';
+import { SignUpComponent } from 'aws-amplify-angular';
 
 
 const routes: Routes = [
    { path: '', redirectTo: 'home', pathMatch: 'full' },
    { path: 'home', component: HomeComponent },
    { path: 'logIn', component: LogInComponent },
+   { path: 'signUp', component: LogInComponent},
    { path: 'dispositivos', component: DispositivosComponent, canActivate:[AuthGuardGuard]},
    { path: 'liveTime/:dispositivoId', component:  LiveTimeComponent, canActivate: [AuthGuardGuard]}
 ];

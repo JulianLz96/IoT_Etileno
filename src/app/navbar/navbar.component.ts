@@ -28,6 +28,7 @@ export class NavbarComponent implements OnInit {
     Auth.signOut()
       .then(data => { 
         localStorage.removeItem('token');
+        localStorage.removeItem('email');
         this.zone.run(() => this.router.navigate(['/home']));
       })
       .catch(err => console.log(err));;
