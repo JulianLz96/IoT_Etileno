@@ -18,4 +18,6 @@ export class DispositivosComponent implements OnInit {
     this.devicesID = this.dispositivosService.getDispositivosMocked(localStorage.getItem('email'));
   }
 
+  
+
 }

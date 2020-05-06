@@ -11,9 +11,9 @@ export class DispositivoService {
   constructor(private httpClient:HttpClient) { }
 
   getLastData(deviceID:string):Promise<any> {
-    //const url = `${environment.url}queue/${queueToken}`;
+      const url2 = `${environment.url_base}/${deviceID}`;
       const url = 'https://i3vahk4356.execute-api.us-east-1.amazonaws.com/Test/' + deviceID;
-      return this.httpClient.get(url).toPromise();
+      return this.httpClient.get(url2).toPromise();
   }
 
   getDispositivos(email:string):Promise<any> {
