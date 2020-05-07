@@ -29,7 +29,7 @@ export class NavbarComponent implements OnInit {
       .then(data => { 
         localStorage.removeItem('token');
         localStorage.removeItem('email');
-        this.zone.run(() => this.router.navigate(['/home']));
+        this.zone.run(() => this.router.navigate(['/']));
       })
       .catch(err => console.log(err));;
   }

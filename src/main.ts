@@ -20,7 +20,7 @@ const oauth = {
   redirectSignIn : 'http://localhost:4200/logIn', // or 'exp://127.0.0.1:19000/--/', 'myapp://main/'
 
   // Sign out URL
-  redirectSignOut : 'http://localhost:4200/logIn', // or 'exp://127.0.0.1:19000/--/', 'myapp://main/'
+  redirectSignOut : 'http://localhost:4200/', // or 'exp://127.0.0.1:19000/--/', 'myapp://main/'
 
   // 'code' for Authorization code grant, 
   // 'token' for Implicit grant
