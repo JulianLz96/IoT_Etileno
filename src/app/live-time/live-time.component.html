@@ -1,9 +1,29 @@
 <app-navbar></app-navbar>
 <div class="jumbotron">
     <div class="container">
-        <div>
-            <div id="chartEtyleno" style="margin-top: 20px; padding-top: 20px; height: 370px; width: 80%; margin-left:auto;margin-right:auto;"></div>
+        <div style="text-align: center;">
+            <mat-card-content *ngIf="show_spinner">
+                <h2 class="margin">Waiting</h2>
+                <div style="display: inline-block;">
+                    <mat-progress-spinner class="margin" [color]="color" [mode]="mode">
+                    </mat-progress-spinner>
+                </div>
+            </mat-card-content>
         </div>
-        <div id="chartCO2" style="height: 370px; width: 80%; padding-top: 40px; margin-top: 20px; margin-left:auto;margin-right:auto;"></div>
+        <div class="margin-not-found" *ngIf="notFound">
+            <div class="margin-not-found">
+                <h2> No device found</h2>
+            </div>
+            <div class="margin-not-found">
+                <h4>Verify that is a device associated to your account.</h4>
+            </div>
+        </div>
+        <div class="container-inside">
+            <div class="title" *ngIf="show_title">
+                <h1>Live Time Device</h1>
+            </div>
+            <div id="chartEtyleno" style="margin-top: 20px; padding-top: 20px; height: 370px; width: 80%; margin-left:auto;margin-right:auto;"></div>
+            <div id="chartCO2" style="height: 370px; width: 80%; padding-top: 40px; margin-top: 20px; margin-left:auto;margin-right:auto;"></div>
+        </div>
     </div>
-  </div>
+</div>

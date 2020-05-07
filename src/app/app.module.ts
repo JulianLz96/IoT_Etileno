@@ -17,7 +17,9 @@ import { AmplifyAngularModule, AmplifyService } from 'aws-amplify-angular';
 import { DispositivosComponent } from './dispositivos/dispositivos.component';
 import { LoggeadoDirective } from './common/directriz/loggeado.directive';
 import { ChartsModule, WavesModule } from 'angular-bootstrap-md';
-import { FooterComponent } from './footer/footer.component'
+import { FooterComponent } from './footer/footer.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { FooterComponent } from './footer/footer.component'
     AmplifyAngularModule,
     ChartsModule,
     WavesModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    BrowserAnimationsModule,
+    MatProgressSpinnerModule
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [

@@ -2,6 +2,11 @@
 <div class="jumbotron">
     <div class="container">
         <h1>Dispositivos asociados:</h1>
+        <mat-card-content *ngIf="show_spinner">
+            <h2 class="margin">Waiting</h2>
+            <mat-progress-spinner class="margin" [color]="color" [mode]="mode">
+            </mat-progress-spinner>
+        </mat-card-content>
         <ul>
             <li class="devices" *ngFor="let device of devicesID" [routerLink]="['/liveTime', device]"> {{ device }}</li>
         </ul>
