@@ -16,32 +16,52 @@ export class LogInComponent implements OnInit, AfterViewInit, AfterContentInit {
   constructor(private activatedRoute: ActivatedRoute,
     private router: Router,
     public amplifyService: AmplifyService,
-    private zone: NgZone) { }
+    private zone: NgZone) { 
+      this.activatedRoute.queryParams.subscribe(params => {
+        this.token = params['code'];
+        console.log(this.token);
+        if (this.token != null) {
+          localStorage.setItem('token', this.token);
+          this.getData3();
+        }
+      });
+     }
 
   ngOnInit(): void {
-    this.activatedRoute.queryParams.subscribe(params => {
-      this.token = params['code'];
-      console.log(this.token);
-      if (this.token != null) {
-        localStorage.setItem('token', this.token);
-        Auth.currentAuthenticatedUser().then(data => {
-          console.log(data);
-          localStorage.setItem('email', data.attributes.email);
-        });
-      }
-    });
+    
+  }
+
+  async getData() {
+    const email = await Auth.currentUserInfo().then(data => {
+      console.log(data);
+      return data.attributes.email;
+    }).
+      catch(err => console.log(err));
+    localStorage.setItem('email', email);
+    this.router.navigate(['/home']);
+  }
+
+  async getData2() {
+    const attributes = (await Auth.currentSession()).getIdToken().payload
+    console.log(attributes);
+    
+  }
+
+  async getData3() {
+    const data = await Auth.currentAuthenticatedUser();
+    console.log(data);
+    
   }
 
   ngAfterViewInit() {
-    if (!this.token) {
-      if(this.router.url == '/logIn')
-        window.location.assign(this.URL);
-      else {
-        window.location.assign(this.URL_sign);
-      }
-    } else {
-        this.zone.run(() => this.router.navigate(['/home']));
-    }
+    // if (!this.token) {
+    //   if(this.router.url == '/logIn')
+    //     window.location.assign(this.URL);
+    //   else {
+    //     window.location.assign(this.URL_sign);
+    //   }
+    // } else {
+    // }
   }
 
   ngAfterContentInit() {
