@@ -27,6 +27,7 @@
 
         </ul>
         <form class="form-inline my-2 my-lg-0">
+            <p class="lead" style="margin-top: 15px; color: #ff3232;" *ngIf="logIn_ng">Please log in first</p>
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" [(ngModel)]="searchText" name="searchText">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="search()">Search</button>
         </form>

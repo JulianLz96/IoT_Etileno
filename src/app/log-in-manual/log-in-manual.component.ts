@@ -24,7 +24,7 @@ export class LogInManualComponent implements OnInit {
         console.log(user.attributes.email);
         localStorage.setItem("email", user.attributes.email);
         localStorage.setItem("token", 'yes');
-        this.router.navigate(['/home']);
+        this.router.navigate(['/']);
         
     } catch (error) {
         console.log('error signing in', error);
