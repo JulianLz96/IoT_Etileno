@@ -8,7 +8,8 @@ export const environment = {
   url_cuentas: 'https://5nkzly23pk.execute-api.us-east-1.amazonaws.com/prod',
   url_tableu: 'https://us-west-2b.online.tableau.com/t/rasandbox/views/ReportForIot/Dashboard1?:showAppBanner=false&:display_count=n&:showVizHome=n&:origin=viz_share_link',
   url_login: 'https://iot-equipo6.auth.us-east-1.amazoncognito.com/login?client_id=48v9fpc23ldq4jbblkpmddbpmm&response_type=code&scope=aws.cognito.signin.user.admin+email+openid+phone+profile&redirect_uri=http://localhost:4200/logIn',
-  url_singin: 'https://iot-equipo6.auth.us-east-1.amazoncognito.com/signup?client_id=48v9fpc23ldq4jbblkpmddbpmm&response_type=code&scope=aws.cognito.signin.user.admin+email+openid+phone+profile&redirect_uri=http://localhost:4200/logIn'
+  url_singin: 'https://iot-equipo6.auth.us-east-1.amazoncognito.com/signup?client_id=48v9fpc23ldq4jbblkpmddbpmm&response_type=code&scope=aws.cognito.signin.user.admin+email+openid+phone+profile&redirect_uri=http://localhost:4200/logIn',
+  url_delete_device: 'https://5nkzly23pk.execute-api.us-east-1.amazonaws.com/prod/'
 };
 
 /*

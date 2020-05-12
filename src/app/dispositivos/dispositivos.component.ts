@@ -14,6 +14,7 @@ export class DispositivosComponent implements OnInit, AfterContentInit {
   devicesID: Array<String> = [];
   displayedColumns: string[];
   deviceID: String = "";
+  deviceIDDelete: String = "";
   show: boolean = true;
   color: ThemePalette = 'warn';
   mode: ProgressSpinnerMode = 'indeterminate';
@@ -36,8 +37,21 @@ export class DispositivosComponent implements OnInit, AfterContentInit {
       });
   }
 
+  deleteDevice() {
+    this.dispositivosService.deleteDevice(localStorage.getItem('email'), this.deviceIDDelete).then(res => {
+      console.log(res);
+      this.ngAfterContentInit();
+      this.deviceIDDelete = '';
+    }).
+      catch(err => {
+        console.log(err);
+      });
+  }
+
   ngAfterContentInit() {
     this.displayedColumns = ['deviceID'];
+    this.show = true;
+    this.show_spinner = true;
     var that = this;
     setTimeout(function () {
       that.dispositivosService.getDispositivos(localStorage.getItem('email')).then(res => {

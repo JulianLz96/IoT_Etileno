@@ -26,8 +26,13 @@ export class DispositivoService {
     return devices;
   }
 
-  addDevice(email:String, deviceID:String) {
+  addDevice(email:String, deviceID:String):Promise<any> {
     const url = `${environment.url_cuentas}/${email}/${deviceID}`;
     return this.httpClient.post(url, {}).toPromise();
+  }
+
+  deleteDevice(email:String, deviceID:String):Promise<any> {
+    const url = `${environment.url_delete_device}/${email}/${deviceID}`;
+    return this.httpClient.delete(url).toPromise();
   }
 }

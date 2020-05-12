@@ -6,7 +6,7 @@
             <mat-progress-spinner class="margin" [color]="color" [mode]="mode">
             </mat-progress-spinner>
         </mat-card-content>
-        <ul>
+        <ul *ngIf="!show_spinner">
             <li class="devices" *ngFor="let device of devicesID" [routerLink]="['/liveTime', device]"> {{ device }}</li>
         </ul>
         <div class="separador">
@@ -17,6 +17,14 @@
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="addDevice()">ADD</button>
                 </form>
             </div>
+            <div class="separador">
+                <h4>Deslinkear dispositivo</h4>
+                <div class="separador">
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="text" placeholder="DeviceID" aria-label="DeviceIDDelete" [(ngModel)]="deviceIDDelete" name="deviceIDDelete">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="deleteDevice()">ADD</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
-</div>
