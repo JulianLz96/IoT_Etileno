@@ -10,6 +10,7 @@ import { DispositivosComponent } from './dispositivos/dispositivos.component';
 import { SignUpComponent } from 'aws-amplify-angular';
 import { LogInManualComponent } from './log-in-manual/log-in-manual.component';
 import { SignUpManualComponent } from './sign-up-manual/sign-up-manual.component';
+import { HistoryComponent } from './history/history.component';
 
 
 const routes: Routes = [
@@ -20,7 +21,8 @@ const routes: Routes = [
    //{ path: 'signUp', component: LogInComponent},
    { path: 'signUp', component: SignUpManualComponent},
    { path: 'dispositivos', component: DispositivosComponent, canActivate:[AuthGuardGuard]},
-   { path: 'liveTime/:dispositivoId', component:  LiveTimeComponent, canActivate: [AuthGuardGuard]}
+   { path: 'liveTime/:dispositivoId', component:  LiveTimeComponent, canActivate: [AuthGuardGuard]},
+   { path: 'history', component: HistoryComponent, canActivate:[AuthGuardGuard] }
 ];
 
 @NgModule({

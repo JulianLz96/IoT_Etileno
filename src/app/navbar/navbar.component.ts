@@ -2,6 +2,7 @@ import { Component, OnInit, NgZone, ElementRef } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { AmplifyService } from 'aws-amplify-angular';
 import Amplify, { Auth } from 'aws-amplify';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-navbar',
@@ -12,8 +13,8 @@ export class NavbarComponent implements OnInit {
 
   token: string;
   searchText:String;
-  URL_LOGIN: string = 'https://iot-equipo6.auth.us-east-1.amazoncognito.com/login?client_id=48v9fpc23ldq4jbblkpmddbpmm&response_type=code&scope=aws.cognito.signin.user.admin+email+openid+phone+profile&redirect_uri=http://localhost:4200/logIn';
-  URL_SIGN: string = 'https://iot-equipo6.auth.us-east-1.amazoncognito.com/signup?client_id=48v9fpc23ldq4jbblkpmddbpmm&response_type=code&scope=aws.cognito.signin.user.admin+email+openid+phone+profile&redirect_uri=http://localhost:4200/logIn';
+  URL_LOGIN: string = environment.url_login;
+  URL_SIGN: string = environment.url_singin;
   mySubscription: any;
   
   constructor(private eR:ElementRef,

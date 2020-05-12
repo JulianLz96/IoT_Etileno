@@ -26,6 +26,7 @@ import amplify from './aws-exports';
 import { LogInManualComponent } from './log-in-manual/log-in-manual.component';
 import { SignUpManualComponent } from './sign-up-manual/sign-up-manual.component';
 
+
 Amplify.configure(amplify);
 
 const oauth = {
