@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Auth } from 'aws-amplify';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-log-in-manual',
@@ -29,6 +30,10 @@ export class LogInManualComponent implements OnInit {
     } catch (error) {
         console.log('error signing in', error);
     }
+}
+
+signUp() {
+ window.location.replace(environment.url_singin);     
 }
 
 }
